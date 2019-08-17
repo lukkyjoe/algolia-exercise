@@ -22,11 +22,11 @@ class App extends Component {
   render() {
     return (
       <div className="ais-InstantSearch">
-        <h1>Everybody loves board games</h1>
+        <h1>Find Your Board Game</h1>
         <InstantSearch indexName="boardGames" searchClient={searchClient}>
           <div className="left-panel">
             <ClearRefinements />
-            <h2>Brands</h2>
+            <h2>Category</h2>
             <RefinementList attribute="category" />
             <Configure hitsPerPage={8} />
           </div>
@@ -43,15 +43,18 @@ class App extends Component {
 
 function Hit(props) {
   return (
-    <div>
-      <img src={props.hit.image_url} align="left" alt={props.hit.names} />
+    <div className="card">
+      <div>{props.hit.names}</div>
+      {/* <img src={props.hit.image_url} align="left" alt={props.hit.names} /> */}
       <div className="hit-name">
         <Highlight attribute="name" hit={props.hit} />
       </div>
       <div className="hit-description">
         <Highlight attribute="description" hit={props.hit} />
       </div>
-      <div className="hit-price">Geek rating: {props.hit.geek_rating}</div>
+      <div className="hit-description">Geek rating: {props.hit.geek_rating}</div>
+      <div className="hit-description">Category: {props.hit.category}</div>
+      <div className="hit-description">Designer: {props.hit.designer}</div>      
     </div>
   );
 }

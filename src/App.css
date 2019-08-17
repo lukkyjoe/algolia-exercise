@@ -29,6 +29,10 @@ body {
 .ais-Hits-item {
   margin-bottom: 1em;
   width: calc(50% - 1rem);
+  border-radius: 6%;
+  border: 10px solid rgb(53, 52, 52);
+  background-color: lightblue;
+  /* padding: 0; */
 }
 
 .ais-Hits-item img {
@@ -40,7 +44,11 @@ body {
 }
 
 .hit-description {
-  color: #888;
+  color: black;
   font-size: 14px;
   margin-bottom: 0.5em;
 }
+
+/* .card {
+  border: 10px solid red
+} */
